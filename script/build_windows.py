@@ -3,6 +3,7 @@ import shutil
 import os
 import sys
 import glob
+import subprocess
 import argparse
 
 SCRIPT_PATH = os.path.split(os.path.realpath(__file__))[0]
@@ -30,10 +31,9 @@ def gene_proto_buf_source_file(out_dir):
     if sys.platform.startswith("win"):
         protoc_path = get_project_path() + "/script/bin/protoc.exe"
 
-    build_cmd = '"{0}" -I="{1}" --cpp_out="{2}" {3}'.format(
-        protoc_path, proto_dir, out_dir, " ".join('"%s"' % f for f in proto_files)
-    )
-    ret = os.system(build_cmd)
+    build_cmd = [protoc_path, "-I=" + proto_dir, "--cpp_out=" + out_dir] + proto_files
+    print("protoc cmd:" + " ".join(build_cmd))
+    ret = subprocess.call(build_cmd)
     if ret != 0:
         print("!!!generate pb source file fail")
         return False
