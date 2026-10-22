@@ -9,9 +9,21 @@ class ExecuteOnScopeExit {
 public:
     ExecuteOnScopeExit() = default;
 
-    // 这里的移动构造函数没有形参，是因为函数体中不会用到形参。C++函数中，参数名可以省略，但是参数类型不能省略
-    ExecuteOnScopeExit(ExecuteOnScopeExit&&) = default;
-    ExecuteOnScopeExit& operator=(ExecuteOnScopeExit&&) = default;
+    // // 这里的移动构造函数没有形参，是因为函数体中不会用到形参。C++函数中，参数名可以省略，但是参数类型不能省略
+    // ExecuteOnScopeExit(ExecuteOnScopeExit&&) = default;
+    // ExecuteOnScopeExit& operator=(ExecuteOnScopeExit&&) = default;
+
+    // 这里的移动构造需要清空源对象的回调，所以需要手动实现
+    ExecuteOnScopeExit(ExecuteOnScopeExit&& other) noexcept : func_(other.func_) {
+        other.func_ = nullptr;
+    }
+    ExecuteOnScopeExit& operator=(ExecuteOnScopeExit&& other) {
+        if(this != &other) {
+            func_ = other.func_;
+            other.func_ = nullptr;
+        }
+        return *this;
+    }
 
     // 删除拷贝构造与拷贝赋值运算符
     ExecuteOnScopeExit(const ExecuteOnScopeExit&) = delete;

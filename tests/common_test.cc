@@ -62,6 +62,15 @@ TEST(DeferTest, RunsInReverseOrder) {
   EXPECT_EQ(order, (std::vector<int>{2, 1}));
 }
 
+TEST(DeferTest, MovedFromObjectDoesNotRunAgain) {
+  int count = 0;
+  {
+    logger::ExecuteOnScopeExit first([&count] { ++count; });
+    logger::ExecuteOnScopeExit second(std::move(first));
+  }
+  EXPECT_EQ(count, 1);
+}
+
 TEST(LogLevelTest, ValuesMatchLevelMacros) {
   EXPECT_EQ(static_cast<int>(logger::LogLevel::kTrace), LOGGER_LEVEL_TRACE);
   EXPECT_EQ(static_cast<int>(logger::LogLevel::kDebug), LOGGER_LEVEL_DEBUG);
