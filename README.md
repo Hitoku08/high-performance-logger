@@ -2,7 +2,7 @@
 
 参考实现：[CppTrainingHub/logger-tutorial](https://github.com/CppTrainingHub/logger-tutorial)
 
-开发路线、构建验证与协作规则见 [AGENTS.md](AGENTS.md)。
+开发路线、构建验证与协作规则见 [CLAUDE.md](CLAUDE.md)。
 
 ```powershell
 python script/build_windows.py --test

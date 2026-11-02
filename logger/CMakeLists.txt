@@ -11,7 +11,7 @@ set(ZSTD_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 add_subdirectory(third_party/zstd/build/cmake zstd)
 add_subdirectory(third_party/zlib)
 
-# 每完成一个模块，把该模块的源文件取消注释（模块编号见 AGENTS.md 的开发路线）。
+# 每完成一个模块，把该模块的源文件取消注释（模块编号见 CLAUDE.md 的开发路线）。
 # 只有头文件的模块（M1 等）不需要在这里登记。
 if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
     set(UTIL_SRCS
