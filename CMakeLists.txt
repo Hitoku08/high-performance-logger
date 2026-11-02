@@ -9,7 +9,7 @@ option(BUILD_STL_TEST "build unit tests" OFF)
 add_definitions(-DFMT_HEADER_ONLY=1)
 add_definitions(-DENABLE_LOG=1)
 
-set(INCDIRS . ${CMAKE_BINARY_DIR} logger logger/third_party/protobuf logger/third_party/spdlog/include)
+set(INCDIRS . ${CMAKE_BINARY_DIR} logger logger/third_party/protobuf)
 include_directories(${INCDIRS})
 
 if(MSVC)
