@@ -32,7 +32,7 @@ else()
 endif()
 
 set(CORE_SRCS
-    # log_msg.cc log_handle.cc                                         # M3
+    log_msg.cc log_handle.cc                                         # M3
     # log_factory.cc                                                   # M5
 )
 set(FORMATTER_SRCS
