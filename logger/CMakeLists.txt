@@ -36,11 +36,11 @@ set(CORE_SRCS
     # log_factory.cc                                                   # M5
 )
 set(FORMATTER_SRCS
-    # formatter/default_formatter.cc                                   # M4
+    formatter/default_formatter.cc                                   # M4
     # formatter/effective_formatter.cc                                 # M10
 )
 set(SINK_SRCS
-    # sinks/console_sink.cc                                            # M4
+    sinks/console_sink.cc                                            # M4
     # sinks/effective_sink.cc                                          # M11
 )
 set(CONTEXT_SRCS
