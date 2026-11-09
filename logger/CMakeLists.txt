@@ -33,7 +33,7 @@ endif()
 
 set(CORE_SRCS
     log_msg.cc log_handle.cc                                         # M3
-    # log_factory.cc                                                   # M5
+    log_factory.cc                                                   # M5
 )
 set(FORMATTER_SRCS
     formatter/default_formatter.cc                                   # M4
