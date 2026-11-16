@@ -44,7 +44,7 @@ set(SINK_SRCS
     # sinks/effective_sink.cc                                          # M11
 )
 set(CONTEXT_SRCS
-    # context/thread_pool.cc context/executor.cc context/context.cc    # M6
+    context/thread_pool.cc context/executor.cc context/context.cc    # M6
 )
 set(COMPRESS_SRCS
     # compress/zstd_compress.cc compress/zlib_compress.cc              # M8
