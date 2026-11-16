@@ -25,7 +25,7 @@ elseif(CMAKE_SYSTEM_NAME STREQUAL "Windows")
         utils/sys_util_win.cc utils/sys_util.cc utils/file_util.cc     # M2
     )
     set(MMAP_SRCS
-        # mmap/mmap_aux.cc mmap/mmap_win.cc                              # M7
+        mmap/mmap_aux.cc mmap/mmap_win.cc                              # M7
     )
 else()
     message(FATAL_ERROR "unsupported.")
