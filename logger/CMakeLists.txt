@@ -47,7 +47,7 @@ set(CONTEXT_SRCS
     context/thread_pool.cc context/executor.cc context/context.cc    # M6
 )
 set(COMPRESS_SRCS
-    # compress/zstd_compress.cc compress/zlib_compress.cc              # M8
+    compress/zstd_compress.cc compress/zlib_compress.cc              # M8
 )
 set(CRYPT_SRCS
     # crypt/crypt.cc crypt/aes_crypt.cc                                # M9
