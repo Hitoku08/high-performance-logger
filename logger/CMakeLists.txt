@@ -50,7 +50,7 @@ set(COMPRESS_SRCS
     compress/zstd_compress.cc compress/zlib_compress.cc              # M8
 )
 set(CRYPT_SRCS
-    # crypt/crypt.cc crypt/aes_crypt.cc                                # M9
+    crypt/crypt.cc crypt/aes_crypt.cc                                # M9
 )
 set(PROTO_SRCS
     # ${CMAKE_BINARY_DIR}/effective_msg.pb.cc                          # M10
