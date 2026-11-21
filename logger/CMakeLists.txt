@@ -25,7 +25,7 @@ elseif(CMAKE_SYSTEM_NAME STREQUAL "Windows")
         utils/sys_util_win.cc utils/sys_util.cc utils/file_util.cc     # M2
     )
     set(MMAP_SRCS
-        # mmap/mmap_aux.cc mmap/mmap_win.cc                              # M7
+        mmap/mmap_aux.cc mmap/mmap_win.cc                              # M7
     )
 else()
     message(FATAL_ERROR "unsupported.")
@@ -33,7 +33,7 @@ endif()
 
 set(CORE_SRCS
     log_msg.cc log_handle.cc                                         # M3
-    # log_factory.cc                                                   # M5
+    log_factory.cc                                                   # M5
 )
 set(FORMATTER_SRCS
     formatter/default_formatter.cc                                   # M4
@@ -44,7 +44,7 @@ set(SINK_SRCS
     # sinks/effective_sink.cc                                          # M11
 )
 set(CONTEXT_SRCS
-    # context/thread_pool.cc context/executor.cc context/context.cc    # M6
+    context/thread_pool.cc context/executor.cc context/context.cc    # M6
 )
 set(COMPRESS_SRCS
     # compress/zstd_compress.cc compress/zlib_compress.cc              # M8
