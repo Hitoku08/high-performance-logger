@@ -31,7 +31,11 @@ void ExecutorTimer::Run_() {
             continue;
         }
         if (Clock::now() < queue_.top().when) {
-            cv_.wait_until(lock, queue_.top().when);  // 阻塞直到队头任务到期
+            // 这里的wait_until()的第二个参数是引用传递，但是在线程阻塞期间
+            // 其他的线程可能会改变queue_，导致queue_底层的vector扩容。这时候引用就悬空了
+            // 所以使用局部变量
+            auto when = queue_.top().when;
+            cv_.wait_until(lock, when);  // 阻塞直到队头任务到期
             continue;
         }
 
