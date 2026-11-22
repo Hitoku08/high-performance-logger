@@ -37,7 +37,7 @@ set(CORE_SRCS
 )
 set(FORMATTER_SRCS
     formatter/default_formatter.cc                                   # M4
-    # formatter/effective_formatter.cc                                 # M10
+    formatter/effective_formatter.cc                                 # M10
 )
 set(SINK_SRCS
     sinks/console_sink.cc                                            # M4
@@ -47,13 +47,13 @@ set(CONTEXT_SRCS
     context/thread_pool.cc context/executor.cc context/context.cc    # M6
 )
 set(COMPRESS_SRCS
-    # compress/zstd_compress.cc compress/zlib_compress.cc              # M8
+    compress/zstd_compress.cc compress/zlib_compress.cc              # M8
 )
 set(CRYPT_SRCS
-    # crypt/crypt.cc crypt/aes_crypt.cc                                # M9
+    crypt/crypt.cc crypt/aes_crypt.cc                                # M9
 )
 set(PROTO_SRCS
-    # ${CMAKE_BINARY_DIR}/effective_msg.pb.cc                          # M10
+    ${CMAKE_BINARY_DIR}/effective_msg.pb.cc                          # M10
 )
 
 set(SRCS
