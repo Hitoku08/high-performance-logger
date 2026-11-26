@@ -1,5 +1,5 @@
 // 定义 LogFactory，一个全局单例
-#pragma once;
+#pragma once
 
 #include <atomic>
 #include <memory>
