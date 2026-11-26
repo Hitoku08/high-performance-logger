@@ -18,6 +18,10 @@ foreach(src ${TEST_SRCS})
     get_filename_component(name ${src} NAME_WE)
     add_executable(${name} ${src})
     target_link_libraries(${name} PRIVATE logger GTest::gtest_main)
+    # M12：解码器测试额外链接 decoder_core
+    if(name STREQUAL "decoder_test" AND TARGET decoder_core)
+        target_link_libraries(${name} PRIVATE decoder_core)
+    endif()
     gtest_discover_tests(${name}
         WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
         DISCOVERY_TIMEOUT 60
