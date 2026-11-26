@@ -41,7 +41,7 @@ set(FORMATTER_SRCS
 )
 set(SINK_SRCS
     sinks/console_sink.cc                                            # M4
-    # sinks/effective_sink.cc                                          # M11
+    sinks/effective_sink.cc                                          # M11
 )
 set(CONTEXT_SRCS
     context/thread_pool.cc context/executor.cc context/context.cc    # M6
